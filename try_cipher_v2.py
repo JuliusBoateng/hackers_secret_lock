@@ -19,13 +19,10 @@ def polySub(usr_char, key_char):
 def encrypting(usr, key):
     new_usr = usr.lower() # Case insensitive b/c polysub (vigenere table) is case insentive
     new_key = key.lower()
-
+    
     result = ""
-    for i in range(len(new_usr)):
-        if i >= len(new_key):
-            result += new_usr[i]
-        else:
-            result += polySub(new_usr[i], new_key[i])
+    for i in range(len(usr)):
+        result += polySub(new_usr[i], new_key[i % (len(key))])
     
     print(result)
 
