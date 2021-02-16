@@ -5,7 +5,7 @@ PROGRAM = gridlock
 
 all:    $(PROGRAM)
 
-$(PROGRAM):  $(PROGRAM).c
+%:  %.c
 	@echo "Compiling $@"
 	@$(CC) $(CFLAGS) -o $@ $<
 
