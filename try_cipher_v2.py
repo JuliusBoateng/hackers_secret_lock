@@ -4,8 +4,8 @@ START = ord("a")
 END = ord("z")
 
 def polySub(usr_char, key_char):
-    val = ord(key_char)
-    offset = ord(usr_char) - START
+    val = ord(usr_char)
+    offset = ord(key_char) - START
 
     new_val = (val + offset) % (END + 1)
     
@@ -16,6 +16,14 @@ def polySub(usr_char, key_char):
 
     return chr(new_char)
 
+def decrypt(encrypted_char, key_char):
+    row = ord(key_char)
+    val = ord(encrypted_char)
+
+    diff = (val - row) % ((END - START) + 1)
+
+    return chr(START + diff)
+
 def encrypting(usr, key):
     new_usr = usr.lower() # Case insensitive b/c polysub (vigenere table) is case insentive
     new_key = key.lower()
@@ -24,13 +32,28 @@ def encrypting(usr, key):
     for i in range(len(usr)):
         result += polySub(new_usr[i], new_key[i % (len(key))])
     
-    print(result)
+    return result
+
+def decrypting(encrypted, key):
+    new_encrypted = encrypted.lower()
+    new_key = key.lower()
+
+    result = ""
+    for i in range(len(encrypted)):
+        result += decrypt(new_encrypted[i], new_key[i % (len(key))])
+    
+    return result
+
+     
 
 def main():
-    usr = "EDUCBA"
-    key = "APPLE"
+    usr = "Julius"
+    key = "Boateng"
 
-    encrypting(usr, key)
+    encrypted = encrypting(usr, key)
+    print("Input: " + usr + " Key: " + key + " Encrypted: " + encrypted)
+    decrypted = decrypting(encrypted, key)
+    print("Decrypted: " + decrypted)
 
 if __name__ == "__main__":
     main()
