@@ -1,5 +1,6 @@
 #include <stdio.h>  /*needed by printf and BUFSIZ*/ 
 #include <stdlib.h> /*needed by exit()*/
+ 
 int stl(char* str) { 
 	int c = 0; 
 	while(str[c] != '\0') { 
@@ -54,7 +55,7 @@ int encrypting(char* text, char* key, char start, char end){
 
 int main(int argc, char **argv){
 	/* Set default key and text*/ 
-	char* key = "apple"; /*segfaults if this is uppercase in lowercase when mixedCase[i] += 32...*/
+	char* key = "apple"; /*segfaults if this is uppercase in lowercase() when mixedCase[i] += 32...*/  
        	char* text = "educba"; 	
 	char start = 'a'; 
 	char end = 'z'; 
@@ -64,7 +65,7 @@ int main(int argc, char **argv){
 		return 1;
 	}
 	else if (argc == 2) { 		/* optional key not given */ 
-		text = argv[1]; 
+		text = argv[1];  	
 	} 
 	else { 
 		key = argv[1]; 
