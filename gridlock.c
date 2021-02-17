@@ -12,8 +12,6 @@ char* lowercase(char* mixedCase, char start, char end) {
 		if(mixedCase[i]>=65&&mixedCase[i]<91){  
 			mixedCase[i] += 32; 
 		} 	
-	       
-
 	}	
 	return mixedCase; 
 }
