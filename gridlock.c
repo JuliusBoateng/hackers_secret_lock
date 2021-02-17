@@ -1,10 +1,24 @@
 #include <stdio.h>  /*needed by printf and BUFSIZ*/ 
-#include <string.h> /*needed by strlen()*/ 
 #include <stdlib.h> /*needed by exit()*/
+int stl(char* str) { 
+	int c = 0; 
+	while(str[c] != '\0') { 
+		c++; 
+	}
+	return c; 
+}
+char* my_strncat(char *dest, const char *src, size_t n){
+    size_t dest_len = stl(dest);
+    size_t i;
+   for (i = 0 ; i < n && src[i] != '\0' ; i++)
+        dest[dest_len + i] = src[i];
+    dest[dest_len + i] = '\0';
 
+   return dest;
+}
 char* lowercase(char* mixedCase, char start, char end) { 
 	int i; /* this is necessary because c89 does not allow declaration of control variables in for loop */  
-	for(i=0; i<strlen(mixedCase); i++) { /* I decided to do it this way instead of with tolower because it seemed more "hacker like" and easier to obfuscate */ 
+	for(i=0; i<stl(mixedCase); i++) { /* I decided to do it this way instead of with tolower because it seemed more "hacker like" and easier to obfuscate */ 
 		if(mixedCase[i]<start || mixedCase[i]>end) { 
 			printf("INVALID CHARACTER: \'%c\'! All characters must be between \'%c\' and \'%c\' in ASCII Table \n", mixedCase[i], start, end);
 		       	exit(1); 	
@@ -28,9 +42,9 @@ int encrypting(char* text, char* key, char start, char end){
        	key = lowercase(key, start, end); 	
 	char result[BUFSIZ] = ""; /* we should try to find a way to use the exact size */  
 	int i; 
-	for(i=0; i<strlen(text); i++) { 
-		char polysub_l = polysub(text[i], key[i % strlen(key)], start, end); 
-		strcat(result, &polysub_l);
+	for(i=0; i<stl(text); i++) { 
+		char polysub_l = polysub(text[i], key[i % stl(key)], start, end); 
+		my_strncat(result, &polysub_l, 1);
 	} 	
 	printf("Encrypted Result: \'%s\'\n", result); 	
 	return 0; 
