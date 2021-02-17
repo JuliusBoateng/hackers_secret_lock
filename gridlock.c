@@ -16,17 +16,18 @@ char* my_strncat(char *dest, const char *src, size_t n){
 
    return dest;
 }
-char* lowercase(char* mixedCase, char start, char end) { 
+char* lowercase(char* mixedCase, char start, char end) {
 	int i; /* this is necessary because c89 does not allow declaration of control variables in for loop */  
-	for(i=0; i<stl(mixedCase); i++) { /* I decided to do it this way instead of with tolower because it seemed more "hacker like" and easier to obfuscate */ 
+	for(i=0; i<stl(mixedCase); i++) { /* I decided to do it this way instead of with tolower because it seemed more "hacker like" and easier to obfuscate */
+		char prev_char = mixedCase[i];
+		if(mixedCase[i]>64&&mixedCase[i]<91){ 
+			mixedCase[i] += 32;
+		}
 		if(mixedCase[i]<start || mixedCase[i]>end) { 
-			printf("INVALID CHARACTER: \'%c\'! All characters must be between \'%c\' and \'%c\' in ASCII Table \n", mixedCase[i], start, end);
+			printf("INVALID CHARACTER: \'%c\'! All characters must be between \'%c\' and \'%c\' in ASCII Table \n", prev_char, start, end);
 		       	exit(1); 	
 		}	
-		if(mixedCase[i]>=65&&mixedCase[i]<91){  
-			mixedCase[i] += 32; 
-		} 	
-	}	
+	}
 	return mixedCase; 
 }
 char polysub(char t, char k, char start, char end) {
@@ -53,8 +54,8 @@ int encrypting(char* text, char* key, char start, char end){
 
 int main(int argc, char **argv){
 	/* Set default key and text*/ 
-	char* key = "APPLE";
-       	char* text = "EDUCBA"; 	
+	char* key = "apple"; /*segfaults if this is uppercase in lowercase when mixedCase[i] += 32...*/
+       	char* text = "educba"; 	
 	char start = 'a'; 
 	char end = 'z'; 
 	/* Parse arguments */ 
