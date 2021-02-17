@@ -32,8 +32,8 @@ char* lowercase(char* mixedCase, char start, char end) {
 	return mixedCase; 
 }
 char polysub(char t, char k, char start, char end) {
-	int offset = t - start; 
-	char new_val = (k + offset) % (end + 1); 
+	int offset = k - start; 
+	char new_val = (t + offset) % (end + 1); 
 	if(new_val < start) { 
 		new_val = start + new_val; 
 	} 	
