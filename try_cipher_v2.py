@@ -16,7 +16,7 @@ def polySub(usr_char, key_char):
 
     return chr(new_char)
 
-def decrypt(encrypted_char, key_char):
+def reversePolySub(encrypted_char, key_char):
     row = ord(key_char)
     val = ord(encrypted_char)
 
@@ -40,11 +40,9 @@ def decrypting(encrypted, key):
 
     result = ""
     for i in range(len(encrypted)):
-        result += decrypt(new_encrypted[i], new_key[i % (len(key))])
+        result += reversePolySub(new_encrypted[i], new_key[i % (len(key))])
     
     return result
-
-     
 
 def main():
     usr = "Julius"
