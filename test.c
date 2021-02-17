@@ -37,6 +37,9 @@ argv
 
 	int DEL = 0;
 	lock =
+		DEL&
+		DEL&
+		DEL&
 1;
 	puts(lock ? "lock\n" : "unlock\n");
 
