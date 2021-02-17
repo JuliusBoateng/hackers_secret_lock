@@ -51,6 +51,5 @@ int main(int argc, char **argv){
 		text = argv[2]; 
 	} 
 	printf("Encoding \'%s\'...\n", text); 
-
 	return encrypting(text, key); 
 }
