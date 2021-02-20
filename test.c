@@ -4,7 +4,6 @@
 'b'
 
 /* C is flexible with newlines */
-int
 main
 (
 int
@@ -43,6 +42,16 @@ argv
 1;
 	puts(lock ? "lock\n" : "unlock\n");
 
+	DEL = -1;
+	int ETE = -1, ME = 0;
+	lock =
+		DEL|
+		ETE|
+		~ME|
+1;
+
+	printf("%d\n", lock);
+
 	/* Strings next to each other are concatenated */
 	puts("a"
 "b");
@@ -56,5 +65,4 @@ argv
 	}
 	/* i is now 2, and can be used elsewhere */
 
-	return 0;
 }
