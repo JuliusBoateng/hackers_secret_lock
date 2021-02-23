@@ -21,7 +21,18 @@ int main(int argc, char **argv){
 	char *key = argv[1];
 	int keylen = 0;
 	for (; key[keylen]; keylen++);
-
+    int i; 
+    for(i=0; i <keylen; i++) { 
+        if(key[i]>='a'&& key[i]<='z') { 
+            key[i] = key[i]-32; 
+        } 
+        else if(key[i]>='A'&& key[i]<='Z') { 
+            ; 
+        } 
+        else { 
+            return !!puts(key); 
+        } 
+    }
 	/* Get and translate text */
 	/* The text variable will be updated in-place */
 	char *text = argv[2];
