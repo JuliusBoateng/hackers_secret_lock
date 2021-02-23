@@ -16,7 +16,7 @@ You need C89 and make to run our code.
 ## Output 
 - If the output is a string of characters like `ogpyk` that is your encrypted/decrypted result! 
 - If the output is `Usage: ./gridlock key text` then you did not enter the correct number of arguments 
-- If the program quits unexpectedly, then your input was not valid. Only alphabetic characters are accepted for the key and text
+- If the output is `Key must be letters` then your key argument contained characters that are not allowed. Please only enter alphabetic characters. 
 
 ## Historical Background/Context 
 
