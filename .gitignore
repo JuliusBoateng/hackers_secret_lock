@@ -1,7 +1,7 @@
 *.sw?
 gridlock
 gridlock?
-test
+sandbox
 
 # Prerequisites
 *.d

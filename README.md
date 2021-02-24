@@ -3,7 +3,7 @@
 Contributors: jboateng, esmith36, shannon3
 
 ## Requirements 
-You need C89 and make to run our code. 
+You need a C89 compiler and make to run our code; we tested on gcc 6.3.0.
 
 ## How to Run
 1. Clone the repository
