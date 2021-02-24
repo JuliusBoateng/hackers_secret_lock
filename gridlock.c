@@ -1,24 +1,24 @@
              main(int
-          c,char**v){int
+          l,char**r){int
         ETE=-        0,DEL
        =010            ,ME,
-      s;ME              =ETE
+      o;ME              =ETE
       --;                DEL
      =ETE                ?~0:
-     DEL%                8;s=
+     DEL%                8;o=
                          DEL|
                          ETE|
                          ~ME|
-#define U(c)(c&&c-1>>6&(c)/13<0x7)
-1;if(c^3)return!f(1);char*k=*++v,*
-t,a,j=0,b=c*9-1;for(c=0;k[c];c++);
-for(t=k;*t;t++){if(U(*t-0x20))*t-=
-040;if(!U(*t))return!f(0);}t=*++v;
-for(;*t;t++){a=U(*t)?0x41:U(*t-32)
-?0141:ME;a&&(*t=a+(*t-a+s*(k[j++%c
-]-0101)+b)%b);}return!puts(*v);}f(
-x){char*s="R5k5~l$vplwftmto\037b`"
+#define t(l)(l&&l-1>>6&(l)/13<0x7)
+1;if(l^3)return!f(1);char*O=*++r,*
+p,b,u=0,i=l*9-1;for(l=0;O[l];l++);
+for(p=O;*p;p++){if(t(*p-0x20))*p-=
+040;if(!t(*p))return!f(0);}p=*++r;
+for(;*p;p++){b=t(*p)?0x41:t(*p-32)
+?0141:ME;b&&(*p=b+(*p-b+o*(O[u++%l
+]-0101)+i)%i);}return!puts(*r);}f(
+I){char*o="R5k5~l$vplwftmto\037b`"
 "ib\x1d\x1cgg`_sm\x19ll\\\\hnhi\0"
-;s+=x;for(x=-3+~3;*s;s+=2){putchar
-(x+++*s);}return!putchar(x*x/14);}
+;o+=I;for(I=-3+~3;*o;o+=2){putchar
+(I+++*o);}return!putchar(I*I/14);}
 
