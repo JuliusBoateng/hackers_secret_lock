@@ -1,5 +1,5 @@
 CC      = gcc
-CFLAGS  = -g -std=c89
+CFLAGS  = -Wno-error=implicit-function-declaration -g -std=c89
 
 PROGRAM = gridlock
 
