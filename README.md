@@ -9,7 +9,7 @@ You need a C89 compiler and make to run our code; we tested on gcc 6.3.0.
 1. Clone the repository
 2. Choose whether to encode/decode 
 - To decode: do nothing 
-- To Encode: remove the 3 lines that say `DELETE ME` to make the padlock appear locked 
+- To encode: remove the 3 lines that say `DELETE ME` to make the padlock appear locked 
 3. Make the executable: `make` 
 4. Execute: `./gridlock key text` where `key` is the key you want to use for the cipher and `text` is the text to be encoded/decoded
 
